@@ -1,0 +1,8 @@
+<view class="availableStores_page">
+   <view wx:if="{{isHasData}}">
+     <include src='../include/include.wxml'/>
+    </view>
+   <view class="store_list" wx:for="{{tableData.getData}}" wx:key="id">
+       <view>{{item}}</view>
+   </view>
+</view>

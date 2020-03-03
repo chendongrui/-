@@ -1,0 +1,22 @@
+<view class="store_page rel">
+   <image src="../../assets/store_shop.png"></image>
+   <view class="store_code_btn abs">
+      <!-- <navigator url="../codePage/codePage"> -->
+        <view class="store_code_info" bindtap="goCodeFn">
+         <view class="code_img"><image src="../../assets/stroe_code.png"></image></view>
+         <text>打开我的条形码</text>
+         <view class="code_img"><image src="../../assets/right_light.png"></image></view>
+        </view>
+      <!-- </navigator> -->
+   </view>
+   <!-- 弹出框 start -->
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modalDlg rel" wx:if="{{showModal}}">
+     <image src="../../assets/index_tip_dialog.png"></image>
+     <view class="tip_info abs">
+        <view class="registerBtn" bindtap="shutJump">立即注册</view>
+     </view>
+      <view class="closeBtn abs" bindtap="shutDown"><image src="../../assets/index_tip_close.png"></image></view>
+  </view>
+<!-- 弹出框 end -->
+</view>

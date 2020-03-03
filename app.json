@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/records/records",
+    "pages/store/store",
+    "pages/codePage/codePage",
+    "pages/availableStores/availableStores",
+    "pages/commodDetails/commodDetails",
+    "pages/commodityType/commodityType",
+    "pages/recordsDetail/recordsDetail",
+    "pages/outPage/outPage",
+    "pages/searchCity/searchCity"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WOW乐惠俱乐部",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx7a6de25bce74d9c5"
+    ]
+}

@@ -1,0 +1,1 @@
+<web-view src="{{path}}" bindload='loadFn'  binderror='errorFn'></web-view>

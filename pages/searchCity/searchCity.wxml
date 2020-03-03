@@ -1,0 +1,17 @@
+<view class="searchCity_page">
+   <view class="search_btn">
+     <view class="inputs">
+         <image src="../../assets/searchBtn.png" bindtap="citySearch"></image>
+         <input class="weui-input" placeholder-style="color:#999999"   placeholder="请搜索城市" data-type='PenName'  bindinput="blurInputEventName" />
+     </view>
+   </view>
+    <view class="city_list" wx:if='{{isHasData}}'>
+        <view class="lists" wx:for="{{cityList}}" wx:key="id">
+           <text data-names="{{item.regionName}}" data-id="{{item.id}}" bindtap="cityInfoFn">{{item.regionName}}</text>
+        </view>
+     </view>
+     <view wx:if='{{!isHasData}}'>
+            <include src='../include/include.wxml'/>
+      </view>
+<view class='loadTip' wx:if='{{isHasData && !isStopPull}}'>努力加载中...</view>
+</view>

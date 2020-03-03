@@ -1,0 +1,51 @@
+<view class="recordsDetail">
+  <!-- 跳转小程序 start -->
+     <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{isJump}}"></view>
+      <view class="modalDlg rel" wx:if="{{isJump}}">
+        <view class="section tac">
+          <view class="successtxts">是否要跳转到</view>
+          <view class="successtxts">扫码购小程序去使用？</view>
+        </view>
+        <view class="btn">
+          <view class='a' bindtap="cancleJump"><view class='left button btnPerson'>取消</view></view>
+          <view class='a' bindtap="sureJump"><view class='left button sureChange'>立即跳转</view></view>
+        </view>
+      </view>
+  <!-- 跳转小程序 end -->
+    <view class="records_content">
+       <view class="content_top" wx:if="{{recordsType == '1'}}">
+          <view class="mess">{{tableData.rightsName}}</view>
+          <view class="detail_btn" bindtap="useNowFn">立即使用</view>
+       </view>
+       <view class="content_top" wx:if="{{recordsType == '2'}}">
+          <view class="messInfo">{{tableData.rightsName}}</view>
+          <canvas canvas-id="myQrcode" class="myQrcode" id="myQrcode"></canvas>
+           <view class="recordsInfo"><text>Benefit code：</text></view>
+           <view class="recordsInfos"><text>{{tableData.rightsNumber}}</text></view>
+           <view class="recordsInfo"><text>{{tableData.stopTime}}</text></view>
+       </view>
+        <view class="content_top" wx:if="{{recordsType == '3'}}">
+          <view class="ecard_number">
+             <text>{{tableData.rightsName}}</text>
+          </view>
+          <view class="ecardInfo">
+             <view class="cardNum" wx:if="{{tableData.couponCard != '' || tableData.couponCard != null}}">
+                <view>卡号： <text>{{tableData.couponCard}}</text></view>
+                <view class="cardClone" data-cards="{{tableData.couponCard}}" bindtap="cardNumFn">复制</view>
+             </view>
+             <view class="cardNum" wx:if="{{tableData.couponPwd != '' || tableData.couponPwd != null}}">
+                <view>密码： <text>{{tableData.couponPwd}}</text></view>
+                <view class="cardClone" data-pwd="{{tableData.couponPwd}}"  bindtap="pwdNumFn">复制</view>
+             </view>
+          </view>
+       </view>
+       <view class="content_txt">
+          <view class="h5">Details：</view>
+          <view class="h6">仅限苏州地区卓越会员主卡尊享</view>
+          <view class="h6">卓越会员主卡每月可以在上幕权益小程序领取一张洗车卡。</view>
+          <view class="h6">全员仅可选择任意一家洗车行领券，当月选定后，不可变更或者领取其他洗车行洗车券。</view>
+          <view class="h6">会员持二维码至指定门店可享受免费基础洗车一次。</view>
+          <view class="h6">洗车券仅包含洗车服务，限7座以下的车型（含7座），其他付费项目由会员承担。</view>
+       </view>
+    </view>
+</view>

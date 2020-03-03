@@ -1,0 +1,176 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true" scroll-top="{{scrollTop}}" >
+<view class="index_page">
+<!-- 弹出框 start -->
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modalDlg rel" wx:if="{{showModal}}">
+     <image src="../../assets/index_tip_dialog.png"></image>
+     <view class="tip_info abs">
+        <view class="registerBtn" bindtap="shutJump">立即注册</view>
+     </view>
+      <view class="closeBtn abs" bindtap="shutDown"><image src="../../assets/index_tip_close.png"></image></view>
+  </view>
+<!-- 弹出框 end -->
+
+
+    <view class="user_banner">
+      <view class="user_info rel">
+          <image src="../../assets/index_banner.png"></image>
+          <view class="user abs rel">
+          <navigator url="../searchCity/searchCity?pageVal=1" class="address" data-addressid="{{addressId == '' ? '1' : addressId}}"><text>{{addressTxt == '' ? '全国' : addressTxt}}</text><text></text></navigator>
+          <view class="login_info">
+                <view class="user_img">
+                    <image wx:if="{{isReginter && isLogin}}" src="{{loginInfo. wxUserIcon != '' || loginInfo. wxUserIcon != null ? loginInfo. wxUserIcon: defaluteHead}}" class="user_head"></image>
+                    <image wx:else src="{{defaluteHead}}" class="user_head"></image>
+                    <view class='mess'  wx:if="{{isReginter && isLogin}}">
+                      <view class='user_name'>{{loginInfo.wxUserName}} <canvas canvas-id="barcode" /></view>
+                      <view class='integral'>积分:  <text wx:if="{{loginInfo.memberIntegral}}">{{loginInfo.memberIntegral}}</text></view>
+                    </view>
+                    <view class='mess' wx:else>
+                      <view class='user_name'>未登录</view>
+                      <view class='integral'>积分:  <text></text></view>
+                    </view>
+                </view>
+                <navigator url="../records/records" wx:if="{{isReginter && isLogin}}">
+                  <view class="btn_logo tac">
+                    兑换记录
+                    <image src="../../assets/index_right_white.png"></image>
+                  </view>
+                </navigator>
+                <view class="btn_logo tac" wx:if="{{!isLogin}}">
+                <button wx:if="{{canIUse}}" class='fastLogin userInfo' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" style="background-color:rgba(0,113,206,1)"> 点击登录</button>
+                <view wx:else>请升级微信版本</view>
+              </view>
+                <view class="btn_logo tac" bindtap="onLogin" wx:if="{{!isReginter && isLogin}}">
+                  点击登录
+                  <image src="../../assets/index_right_white.png"></image>
+                </view>
+          </view> 
+          </view>
+      </view>
+      <view class="banner" wx:if="{{bannerData.length != 0}}">
+        <swiper class='swiperImg' circular='{{true}}' autoplay="{{true}}">
+          <block wx:for="{{bannerData}}" wx:key='index'>
+            <swiper-item>
+              <image src="{{item.bannerImage}}" data-url="{{item}}" bindtap="navFn"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="sort_type">
+          <view class="sort_list" bindtap="wmdjExclusiveFn">
+            <view class="sort_img"><image src="../../assets/index_exclusive_wem.png"></image></view>
+              <text>沃家专属</text>
+          </view>
+            <view class="sort_list" bindtap="lifeServiceFn">
+              <view class="sort_img"><image src="../../assets/index_life_service.png"></image></view>
+              <text>生活服务</text>
+          </view>
+            <view class="sort_list" bindtap="storeShopsFn">
+              <view class="sort_img"><image src="../../assets/shops.png"></image></view>
+              <text>门店商铺</text>
+          </view>
+            <view class="sort_list">
+            <navigator url='../store/store'>
+              <view class="sort_img"><image src="../../assets/index_sg_machine.png"></image></view>
+            </navigator>
+              <text>门店礼品机</text>
+          </view>
+      </view>
+    </view>
+
+    
+   <view class="box_contnet">
+        <view class="shops_list" wx:if="{{!isHasData}}">
+          <!-- 本月推荐start -->
+          <view class="commend_month" wx:if="{{tableData.thisMonthRecommendList.length != 0}}">
+            <view class="h2">
+              <text>本月推荐</text>
+              <navigator url="../commodityType/commodityType?goodsType=4" class="more">更多 <image src="../../assets/index_right_ccc.png"></image></navigator>
+            </view>
+            <view class="commend_list">
+                <view class="mess_sell" wx:for="{{tableData.thisMonthRecommendList}}" wx:key="index">
+                  <navigator url="../commodDetails/commodDetails?id={{item.id}}">
+                      <view class="sell_img rel">
+                        <image src="{{(item.bannerImage != '' || item.bannerImage != null) ? item.bannerImage : defaulImg}}"></image>
+                        <image wx:if="{{item.sellOut != null}}" src="../../assets/index_Looting.png" class="abs lootings"></image> 
+                      </view>
+                      <text class="nick_name">{{item.merchantName}}</text>
+                      <text class="nick_detail">{{item.subTitle}}</text>
+                      <view class="grade"><text>{{item.needIntegral}}</text>积分</view>
+                  </navigator>
+                </view>
+            </view>
+          </view>
+      <!-- 本月推荐end -->
+      <!-- 沃家专属 start -->
+        <view class="commend_month wmdjExclusive"  wx:if="{{tableData.wmdjExclusiveList.length != 0}}">
+            <view class="h2">
+              <text>沃家专属</text>
+              <navigator url="../commodityType/commodityType?goodsType=1" class="more">更多 <image src="../../assets/index_right_ccc.png"></image></navigator>
+            </view>
+            <view class="commend_list">
+                <view class="mess_sell" wx:for="{{tableData.wmdjExclusiveList}}" wx:key="index">
+                <navigator url="../commodDetails/commodDetails?id={{item.id}}">
+                    <view class="sell_img rel">
+                      <image src="{{item.bannerImage != '' || item.bannerImage != null ? item.bannerImage : defaulImg}}"></image>
+                      <image wx:if="{{item.sellOut != null}}" src="../../assets/index_Looting.png" class="abs lootings"></image> 
+                    </view>
+                    <text class="nick_name">{{item.merchantName}}</text>
+                      <text class="nick_detail">{{item.subTitle}}</text>
+                      <view class="grade"><text>{{item.needIntegral}}</text>积分</view>
+                </navigator>
+              </view>
+            </view>
+        </view>
+      <!-- 沃家专属 end -->
+      <!-- 生活服务 start -->
+        <view class="commend_month lifeService" wx:if="{{tableData.lifeServiceList.length != 0}}">
+            <view class="h2">
+              <text>生活服务</text>
+                  <navigator url="../commodityType/commodityType?goodsType=2" class="more">更多 <image src="../../assets/index_right_ccc.png"></image></navigator>
+            </view>
+            <view class="commend_list">
+              <view class="mess_sell" wx:for="{{tableData.lifeServiceList}}" wx:key="index">
+                <navigator url="../commodDetails/commodDetails?id={{item.id}}">
+                    <view class="sell_img rel">
+                      <image src="{{item.bannerImage != '' || item.bannerImage != null ? item.bannerImage : defaulImg}}"></image>
+                      <image wx:if="{{item.sellOut != null}}" src="../../assets/index_Looting.png" class="abs lootings"></image> 
+                    </view>
+                    <text class="nick_name">{{item.merchantName}}</text>
+                      <text class="nick_detail">{{item.subTitle}}</text>
+                      <view class="grade"><text>{{item.needIntegral}}</text>积分</view>
+                </navigator>
+              </view>
+            </view>
+        </view>
+      <!-- 生活服务end -->
+      <!-- 门店商铺 start -->
+        <view class="commend_month storeShops" wx:if="{{tableData.storeShopsList.length != 0}}">
+            <view class="h2">
+              <text>门店商铺</text>
+              <navigator url="../commodityType/commodityType?goodsType=3" class="more">更多 <image src="../../assets/index_right_ccc.png"></image></navigator>
+            </view>
+            <view class="commend_list">
+              <view class="mess_sell" wx:for="{{tableData.storeShopsList}}" wx:key="index">
+                  <navigator url="../commodDetails/commodDetails?id={{item.id}}">
+                    <view class="sell_img rel">
+                      <image src="{{item.bannerImage != '' || item.bannerImage != null ? item.bannerImage : defaulImg}}"></image>
+                      <image wx:if="{{item.sellOut}}" src="../../assets/index_Looting.png" class="abs lootings"></image> 
+                    </view>
+                    <text class="nick_name">{{item.merchantName}}</text>
+                      <text class="nick_detail">{{item.subTitle}}</text>
+                      <view class="grade"><text>{{item.needIntegral}}</text>积分</view>
+                </navigator>
+              </view>
+            </view>
+        </view>
+      <!-- 门店商铺 end -->
+      </view>
+      <view wx:if='{{isHasData}}'>
+        <include src='../include/include.wxml'/>
+      </view>
+    </view>
+
+</view>
+</scroll-view>

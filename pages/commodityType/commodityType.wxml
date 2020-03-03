@@ -1,0 +1,53 @@
+<view class="commodity_type">
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showDialog && searchData.length != 0}}"></view>
+  <view class="modalDlg" wx:if="{{showDialog}}">
+     <view class="li">
+        <view wx:for="{{searchData}}" wx:key="{{index}}" class="{{item.selected ? 'bgs' : 'noChecked'}} tac" bindtap="getTypeShop" data-typeid="{{item.id}}" data-txt="{{item.classifyName}}" data-index="{{index}}">{{item.classifyName}}</view>
+     </view>
+     <view class="btn">
+          <view class="leftBtn tac" bindtap="resetRefer">重置</view>
+          <view class="rightBtn tac" bindtap="commodSure">确定</view>
+     </view>
+  </view>
+<!-- {{cityName}} -->
+   <view class="search_type">
+     <view class="lefts">
+        <view bindtap="CommendFn" class="recommend {{isCommend ? 'bg' : ''}}">推荐</view>
+        <view class="recommend sorts {{isSortTop || isSortDown ? 'bg' : ''}}">
+           积分排序
+           <view class="sors">
+              <image bindtap="SortTopFn" data-sort="0" wx:if="{{!isSortTop}}" src="../../assets/top.png"></image>
+              <image bindtap="SortTopFn" wx:if="{{isSortTop}}" src="../../assets/top_light.png"></image>
+              <image bindtap="SortDownFn" data-sort="1" wx:if="{{!isSortDown}}" src="../../assets/down.png"></image>
+              <image bindtap="SortDownFn" wx:if="{{isSortDown}}" src="../../assets/down_light.png"></image>
+           </view>
+        </view>
+        <view class="recommend types {{isType ? 'bg' : ''}}" bindtap="commodTypeFn">{{typeTxt != '' ? typeTxt : '商品分类'}} <image wx:if="{{!isType}}" src="../../assets/down.png"></image>
+        <image wx:if="{{isType}}" src="../../assets/down_light.png"></image>
+        </view>
+     </view>
+     <view class="rights">
+         <navigator url="../searchCity/searchCity?pageVal=2" class="a"><text>{{addressTxt != '' ? addressTxt : '全国'}}</text><text class="address"></text></navigator>
+     </view>
+   </view>
+   <view class="commod_type_content"  wx:if="{{listArr.length != 0 && isHasData}}">
+       <view class="mess" wx:for="{{listArr}}" wx:key="index">
+          <navigator class="commodInfo" url="../commodDetails/commodDetails?id={{item.id}}">
+               <view class="sell_img rel">
+                  <image src="{{item.bannerImage !='' || item.bannerImage != null ? item.bannerImage : defaulImg}}"></image>
+                 <image wx:if="{{item.sellOut != null}}" src="../../assets/index_Looting.png" class="abs lootings"></image> 
+                </view>
+             <text class="nick_name">{{item.merchantName}}</text>
+             <text class="nick_detail">{{item.subTitle}}</text>
+             <view class="grade"><text>{{item.needIntegral}}</text>积分</view>
+         </navigator>
+       </view>
+   </view>
+   <view class="commod_type_content"  wx:if="{{listArr.length == 0}}">
+      <include src='../include/include.wxml'/>
+   </view>
+   <view wx:if='{{!isHasData}}'>
+      <include src='../include/include.wxml'/>
+  </view>
+<view class='loadTip' wx:if='{{isHasData && !isStopPull}}'>努力加载中...</view>
+</view>

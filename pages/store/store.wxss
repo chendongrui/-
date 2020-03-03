@@ -1,0 +1,102 @@
+.store_page{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.store_page image{
+  width: 100%;
+  height: 1960rpx;
+  display: block;
+}
+.store_code_btn{
+  bottom: 105rpx;
+  margin: 0 auto;
+  left: 50%;
+  width: 432rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(250,255,254,1);
+  border-radius: 96rpx;
+  transform: translate(-50%,-50%);
+  height: 96rpx;  
+}
+.store_code_info{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.store_code_btn .store_code_info .code_img{
+  width: 46rpx;
+  height: 31rpx;
+}
+.store_code_btn .store_code_info .code_img:nth-child(1){
+  padding: 0 0 0 43rpx;
+}
+.store_code_btn .store_code_info .code_img:last-child{
+  width: 16rpx;
+  height: 31rpx;
+  padding: 0 43rpx 0 0;
+}
+.store_code_btn .store_code_info .code_img:last-child image{
+  width: 16rpx;
+  height: 23rpx;
+  margin-top:6rpx;
+}
+.store_code_btn .store_code_info text{
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:600;
+  color:rgba(64,161,237,1);
+  margin: 0 17rpx;
+}
+.store_code_btn .code_img image{
+  width: 100%;
+  height: 100%;
+}
+/* 弹出框 */
+.modalDlg{
+  background: none;
+}
+.modalDlg image{
+  width: 562rpx;
+  height: 692rpx;
+}
+.tip_info{
+  left: 0;
+  bottom: 60rpx;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.tip_info .tips text{
+  color:#0071CE;
+}
+.tip_info .registerBtn{
+    width: 158rpx;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    padding: 16rpx 120rpx;
+    background:rgba(0,113,206,1);
+    box-shadow:0px 2px 8px 0px rgba(0,113,206,0.5);
+    border-radius:42rpx;
+    font-size:34rpx;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    line-height:48rpx;
+}
+.modalDlg .closeBtn{
+  left: 42%;
+  bottom: -130rpx;
+  width:80rpx;
+  height: 80rpx;
+  cursor: pointer;
+}
+.modalDlg .closeBtn image{
+  width: 100%;
+  height: 100%;
+}

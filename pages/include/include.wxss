@@ -1,0 +1,23 @@
+.cartList {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.cartList image {
+  width: 300rpx;
+  height: 262rpx;
+  display: inline-block;
+  margin-bottom: 40rpx;
+}
+.cartList .h2 {
+  font-size:34rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(154,154,154,1);
+  line-height:48rpx;
+}

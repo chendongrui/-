@@ -1,0 +1,26 @@
+<view class="records_page">
+    <view class="records_list rel" wx:if="{{tableData.length != 0}}" wx:for="{{tableData}}" wx:key="index">
+        <image src="../../assets/record.png"></image>
+        <navigator url="../recordsDetail/recordsDetail?recordsType={{item.goodsSubtype}}&recordsId={{item.id}}">
+            <view class="record_bar abs" wx:if="{{item.goodsSubtype == '1'}}">
+                <image src="../../assets/record_bar.png"></image></view>
+                <view class="record_info abs">
+                <view class="lefts">
+                    <view class="list_img"> <image src="{{item.bannerImage == '' || item.bannerImage == null ? defaleStore : item.bannerImage}}"></image></view>
+                    <view class="list_info">
+                        <view class="list_time">{{item.receiveTime}}</view>
+                        <view class="{{item.verificationStatus == 1 ?'list_name' : 'list_namecc'}}">麦当劳20元现金券</view>
+                        <view class="list_time">{{item.stopTime}}</view>
+                    </view>
+                </view>
+                <view class="rights">
+                    <view class="{{item.verificationStatus == 1 ?'btn' : 'btncc'}} tac">{{item.verificationStatus == 1 ? '已领取' : (item.verificationStatus == 2 ? '已使用' : (item.verificationStatus == 3 ? '已过期' : (item.verificationStatus == 4 ? '已失效' : '')))}}</view>
+                    <text>{{item.convertIntegral}}积分</text>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <view  wx:if="{{tableData.length == 0}}">
+      <include src='../include/include.wxml'/>
+    </view>
+</view>

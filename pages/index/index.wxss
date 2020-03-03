@@ -1,0 +1,370 @@
+/**index.wxss**/
+@import "../include/include.wxss";
+page{
+  background:rgba(255,255,255,1);
+}
+.index_page,.index_page .user_banner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+}
+.user_info image{
+  width: 100%;
+  height: 362rpx;
+  background-size: 100% 100%;
+}
+.user_info .user{
+  top: 0;
+  left: 5%;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.user_info .user .address{
+  margin: 20rpx 5% 30rpx 0;
+  width: 90%;
+  justify-content: flex-end;
+  display: flex;
+}
+.user_info .user .address text{
+  font-size:30rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(0,113,206,1);
+  line-height:21px;
+}
+.user_info .user .address text:nth-of-type(2){
+  width: 0; 
+  height: 0;
+  border: 14rpx solid;
+  border-color:#0071CE transparent transparent transparent;
+  margin: 16rpx 0 0 2%
+}
+.user_info .user .login_info{
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user_info .user .login_info .user_img{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user_info .user .login_info .user_img .user_head{
+  width: 100rpx;
+  height:100rpx;
+  border-radius: 50%;
+}
+.user_info .user .login_info .user_img .mess{
+  margin-left: 20rpx;
+}
+.user_info .user .login_info .user_img .mess .user_name{
+  font-size:30rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:42rpx;
+}
+.user_info .user .login_info .user_img .mess .user_name image{
+  width: 30rpx;
+  height: 32rpx;
+  margin:0 0 -8rpx 20rpx;
+}
+.user_info .user .login_info .user_img .mess .integral{
+  font-size:26rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(248,248,248,1);
+  line-height:34rpx;
+  margin-top: 14rpx;
+}
+.user_info .user .login_info .btn_logo{
+  width:208rpx;
+  height:68rpx;
+  background:rgba(0,113,206,1);
+  font-size:28rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:68rpx;
+  border-radius:200rpx 0px 0px 200rpx;
+}
+.user_info .user .login_info .btn_logo image{
+  width:18rpx;
+  height:24rpx;
+  line-height:68rpx;
+  display: inline-block;
+  margin:0 0 -2rpx 6rpx;
+}
+.banner{
+  margin-top: -124rpx;
+}
+.banner, .sort_type{
+  margin-left: 3%;
+  width: 94%;
+  height: 248rpx;
+  display: flex;
+}
+.banner swiper-item{
+  border-radius: 16rpx;
+}
+.banner .swiperImg {
+  width: 100%;
+  height: 248rpx;
+}
+.banner .swiperImg image{
+  width:100%;
+  height:100%;
+}
+.sort_type{
+  width: 94%;
+  padding:40rpx 0;
+  display: flex;
+  margin: 0 auto;
+  height: auto;
+}
+.sort_type .sort_list{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.sort_type .sort_list:nth-of-type(1){
+    margin-left: 3%;
+}
+.sort_type .sort_list:nth-of-type(4){
+  margin-right: 3%;
+}
+.sort_type .sort_list image{
+  width:100rpx;
+  height:100rpx;
+  text-align:center;
+  display: inline-block;
+  padding-bottom: 14rpx;
+}
+.sort_type .sort_list text{
+  font-size:14px;
+  text-align: center;
+  font-weight:400;
+  color:rgba(40,40,40,1);
+  line-height:40rpx;
+}
+/* 商品类型 */
+.shops_list{
+  margin-top: 20rpx;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+.shops_list .commend_month{
+  width: 100%;
+  padding-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+.shops_list .commend_month:last-child{
+  padding-bottom: 180rpx;
+}
+.shops_list .commend_month .h2{
+  width: 93%;
+  box-sizing: border-box;
+  display: flex;
+  line-height: 36rpx;
+  height: 36rpx;
+  margin: 0 4% 0 3%;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 6rpx solid rgba(0,113,206,1);
+}
+.shops_list .commend_month .h2 text{
+  padding-left: 20rpx;
+  font-size:36rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:600;
+  color:rgba(40,40,40,1);
+  line-height:50rpx;
+}
+.shops_list .commend_month .h2 .more{
+  font-size:28rpx;
+  font-weight:400;
+  cursor: pointer;
+  color:rgba(93,93,93,1);
+  line-height:40rpx;
+}
+.shops_list .commend_month .h2 .more image{
+  width: 18rpx;
+  height: 28rpx;
+  display: inline-block;
+  margin: 0 0 -2rpx 0;
+}
+.shops_list .commend_month .commend_list{
+  width: 92%;
+  margin: 0 4%;
+  margin-top: 26rpx;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.shops_list .commend_month .commend_list .mess_sell{
+  width: 32%;
+  margin: 20rpx 2% 0 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+.shops_list .commend_month .commend_list .mess_sell navigator{
+  width:92%;
+  padding: 0 4%;
+  height: 100%;
+  margin-bottom: 10rpx;
+}
+.shops_list .commend_month .commend_list .mess_sell:nth-child(3n+3){
+  margin-right: 0;
+}
+.shops_list .commend_month .commend_list .mess_sell .sell_img{
+  width: 100%;
+  height: 198rpx;
+  margin-bottom: 10rpx;
+}
+.shops_list .commend_month .commend_list .mess_sell .sell_img image{
+  width:100%;
+  height: 198rpx;
+  display: inline-block;
+}
+.shops_list .commend_month .commend_list .mess_sell .nick_name{
+  font-size:28rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(93,93,93,1);
+  line-height:40rpx;
+  margin-top:20rpx;
+}
+.shops_list .commend_month .commend_list .mess_sell .nick_detail{
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(154,154,154,1);
+  line-height:34rpx;
+  height: 64rpx;
+  min-height: 32rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.shops_list .commend_month .commend_list .mess_sell .grade{
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  line-height:34rpx;
+  color:rgba(154,154,154,1);
+  margin-top: 10rpx;
+}
+.shops_list .commend_month .commend_list .mess_sell .grade text{
+  color:rgba(222,28,36,1);
+}
+.shops_list .commend_month .commend_list .mess_sell .sell_img .lootings{
+ width: 112rpx;
+ height: 112rpx;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%,-50%);
+}
+/* 弹出框 */
+.modalDlg{
+  background: none;
+}
+.modalDlg image{
+  width: 562rpx;
+  height: 692rpx;
+}
+.tip_info{
+  left: 0;
+  bottom: 60rpx;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.tip_info .tips text{
+  color:#0071CE;
+}
+.tip_info .registerBtn{
+    width: 158rpx;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    padding: 16rpx 120rpx;
+    background:rgba(0,113,206,1);
+    box-shadow:0px 2px 8px 0px rgba(0,113,206,0.5);
+    border-radius:42rpx;
+    font-size:34rpx;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    line-height:48rpx;
+}
+.modalDlg .closeBtn{
+  left: 42%;
+  bottom: -130rpx;
+  width:80rpx;
+  height: 80rpx;
+  cursor: pointer;
+}
+.modalDlg .closeBtn image{
+  width: 100%;
+  height: 100%;
+}
+button{
+  width: auto!important;
+  position: static;
+  display: block;
+  padding: 0px;
+  box-sizing: border-box;
+  font-size:28rpx;
+  padding: 0!important;
+  text-align: center;
+  text-decoration: none;
+  font-size:26rpx!important;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  border: none;
+  color:rgba(255,255,255,1);
+  line-height:64rpx!important;
+  border-radius:200rpx 0px 0px 200rpx!important;
+}
+button::after{
+  width: auto!important;
+  padding: 0!important;
+  position: static;
+  display: block;
+  padding: 0px;
+  box-sizing: border-box;
+  border: none;
+  font-size:26rpx!important;
+  text-align: center;
+  text-decoration: none;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:64rpx!important;
+  border-radius:200rpx 0px 0px 200rpx!important;
+  -webkit-transform-origin: no!important;
+  transform-origin: no!important;
+}
+canvas {
+  width: 30rpx;
+  height: 28rpx;
+  display: inline-block!important;
+  position: relative;
+}
+.box_contnet{
+  width: 100%;
+  position: relative;
+  min-height: 450rpx;
+  height: auto;
+}

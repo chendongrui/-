@@ -1,0 +1,4 @@
+<view class="cartList">
+  <image src="../../assets/null.png"/>
+  <view class='h2'>空空如也~</view>
+</view>

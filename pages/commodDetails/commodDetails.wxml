@@ -1,0 +1,84 @@
+<view class="commodDetail_page">
+<!-- 弹出框 start -->
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modalDlg rel" wx:if="{{showModal}}">
+     <image src="../../assets/index_tip_dialog.png"></image>
+     <view class="tip_info abs">
+        <view class="registerBtn" bindtap="shutJump">立即注册</view>
+     </view>
+      <view class="closeBtn abs" bindtap="shutDown"><image src="../../assets/index_tip_close.png"></image></view>
+  </view>
+<!-- 弹出框 end -->
+  <!-- 确认兑换弹框 start -->
+     <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{isChanges}}"></view>
+      <view class="modalDlg rel" wx:if="{{isChanges}}">
+        <view class="section tac">
+          确认消耗<text wx:if="{{tableData.commodData.needIntegral != '' || tableData.commodData.needIntegral != null }}">{{tableData.commodData.needIntegral}}积分</text>兑换？
+        </view>
+        <view class="btn">
+          <view class='a' bindtap="cancleChange"><view class='left button btnPerson'>取消</view></view>
+          <view class='a' bindtap="sureChanges"><view class='left button sureChange'>确定兑换</view></view>
+        </view>
+      </view>
+  <!-- 确认兑换弹框 end -->
+  <!-- 再次兑换弹框 start -->
+     <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{againChange}}"></view>
+      <view class="modalDlg rel" wx:if="{{againChange}}">
+        <view class="sections tac">
+          <image src="../../assets/success.png"></image>
+          <view class="successtxt">兑换成功</view>
+        </view>
+        <view class="btn">
+          <view class='a' bindtap="againFn"><view class='left button btnPerson'>继续兑换</view></view>
+          <navigator url="../recordsDetail/recordsDetail?recordsType={{tableData.commodData.goodsSubtype}}&recordsId={{tableData.commodData.id}}" class='a'>
+             <view class='left button sureChange'>立即查看</view>
+          </navigator>
+        </view>
+      </view>
+  <!-- 再次兑换弹框 end -->
+    <!-- 兑换失败 start -->
+     <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{failChange}}"></view>
+      <view class="modalDlg rel" wx:if="{{failChange}}">
+        <view class="sections tac">
+          <image src="../../assets/fails.png"></image>
+          <view class="successtxt">兑换失败，请稍后重试</view>
+        </view>
+        <view class="fail_btn">
+          <view class='fails tac' bindtap="failFn"><view class='button'>知道了</view></view>
+       </view>
+      </view>
+  <!-- 兑换失败 end -->
+  <!-- 积分不足 start -->
+     <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{noenough}}"></view>
+      <view class="modalDlg rel" wx:if="{{noenough}}">
+        <view class="sections tac">
+          <image src="../../assets/noenght.png" class="noenght"></image>
+          <view class="successtxts">您的积分不足</view>
+          <view class="successtxts">请选择其他商品</view>
+        </view>
+        <view class="fail_btn">
+          <view class='fails tac' bindtap="failFn"><view class='button'>知道了</view></view>
+       </view>
+      </view>
+  <!-- 积分不足 end -->
+   <view class="commond">
+     <image src="{{tableData.commodData.headDetailImage != '' || tableData.commodData.headDetailImage != null ? tableData.commodData.headDetailImage : defaulImg}}"></image>
+   </view>
+   <view class="shops_mess">
+       <view class="intros">{{tableData.commodData.needIntegral}}积分</view>
+       <view class="intros">{{tableData.commodData.subTitle}}</view>
+   </view>
+   <navigator url="../availableStores/availableStores?commodId={{tableData.commodData.id}}" class="address">
+       <view><image src="../../assets/address.png"></image> <text>查看可用门店</text></view>
+       <view> <image src="../../assets/index_right_ccc.png"></image></view>
+   </navigator>
+     <view class="content_txt" wx:if="{{tableData.commodData.useValidPeriod || tableData.commodData.disableDate || tableData.commodData.usableDate || tableData.commodData.otherRules}}">
+          <view class="h5">使用规则</view>
+          <view class="h6" wx:if="{{tableData.commodData.useValidPeriod != null}}">有效期：{{tableData.commodData.useValidPeriod}}</view>
+          <view class="h6" wx:if="{{tableData.commodData.disableDate != null}}">不可使用日期：{{tableData.commodData.disableDate}}</view>
+          <view class="h6" wx:if="{{tableData.commodData.usableDate != null}}">使用时间：{{tableData.commodData.usableDate}}</view>
+          <view class="h6" wx:if="{{tableData.commodData.otherRules != null}}">{{tableData.commodData.otherRules}}</view>
+       </view>
+       <view  wx:if="{{tableData.commodData.sellOut}}" class="redeem_now_btn_cc tac">{{tableData.commodData.sellOut}}</view>
+       <view  wx:if="{{tableData.commodData.sellOut == '' || tableData.commodData.sellOut == null}}"class="{{isChanges || againChange || failChange || noenough ? 'fixeds' : 'redeem_now_btn'}} tac" bindtap="onChange">立即兑换</view>
+</view>

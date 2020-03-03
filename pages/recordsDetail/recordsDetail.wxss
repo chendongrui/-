@@ -1,0 +1,207 @@
+.recordsDetail{
+  width: 100%;
+  height: 100%;
+}
+.records_content{
+  width: 88%;
+  display: flex;
+  margin: 30rpx 4%;
+  flex-direction: column;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 2px 7px 0px rgba(0,0,0,0.1);
+  border-radius:8px;
+  padding: 0 2%;
+}
+.content_top{  
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 2rpx dashed #BBB9B9;
+}
+.content_top .mess{
+  font-size:40rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(40,40,40,1);
+  line-height:56rpx;
+  margin: 64rpx 0 60rpx;
+}
+.content_top .messInfo{
+  font-size:40rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(40,40,40,1);
+  line-height:56rpx;
+  margin: 44rpx 10% 32rpx;
+}
+.content_top .myQrcode{
+  margin: 0 auto;
+  width: 200px; 
+  height: 200px;
+  margin-bottom: 32rpx;
+  }
+.content_top .messImage image{
+  width: 100%;
+  height: 100%;
+}
+.content_top .recordsInfo, .content_top .recordsInfos{
+  font-size:30rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(93,93,93,1);
+  line-height:42rpx;
+  margin-bottom: 10rpx;
+}
+.content_top .recordsInfos{
+  margin-bottom: 60rpx;
+}
+.content_top .recordsInfo:last-child{
+  margin-bottom: 80rpx;
+}
+.content_top .detail_btn{
+  background:rgba(236,129,49,1);
+  box-shadow:0px 2px 8px 0px rgba(236,129,49,1);
+  border-radius:23px;
+  margin: 0 auto;
+  font-size:34rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:48rpx;
+  margin-bottom: 62rpx;
+  padding: 20rpx 200rpx;
+}
+.content_txt{
+  margin-left: 2%;
+}
+.content_txt .h5{
+  font-size:34rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(40,40,40,1);
+  line-height:48rpx;
+  margin:40rpx 0 20rpx 0;
+}
+.content_txt .h6{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(40,40,40,1);
+  line-height:40rpx;
+  margin-bottom:20rpx;
+}
+.content_txt .h6:last-child{
+  margin-bottom:84rpx;
+}
+.ecard_number{
+  width: 84%;
+  margin: 40rpx 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ecard_number image{
+  width:102rpx;
+  height: 92rpx;
+  margin-right: 20rpx;
+}
+.ecard_number text{
+  font-size:40rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(40,40,40,1);
+  line-height:56rpx;
+}
+.ecardInfo{
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 3%;
+  margin-bottom: 50rpx;
+}
+.ecardInfo .cardNum{
+  width: 88%;
+  margin-bottom: 30rpx;
+  background:rgba(255,255,255,1);
+  padding: 18rpx 6%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow:0px 0px 16rpx 0px rgba(0,0,0,0.08);
+  border-radius:40rpx;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(40,40,40,1);
+  line-height:44rpx;
+}
+.ecardInfo .cardNum .cardClone{
+  font-size:30rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(0,113,206,1);
+  line-height:42rpx;
+}
+
+
+
+
+/* 弹框 */
+.modalDlg{
+  width: 560rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  background:rgba(255,255,255,1);
+  border-radius:4px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+  transform: translate(-50%,-50%);
+ }
+ .modalDlg .section{
+  padding: 60rpx 0 34rpx;
+ }
+.modalDlg .btn{
+   height: 100rpx;
+   border-top:1rpx solid rgba(229,229,229,1);
+}
+.modalDlg .btn .button{
+  border:none;
+  position: static;
+  background: none; 
+  width:280rpx;
+  padding:0;
+  text-align: center;
+  border-radius:0;
+  font-size:36rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height: 100rpx
+}
+.modalDlg .btn .sureChange{
+  font-size:36rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:500;
+  color:rgba(0,113,206,1);
+}
+.modalDlg .btn .button.btnPerson {
+  border-right:1rpx solid rgba(229,229,229,1);
+}
+.modalDlg .btn .a{ 
+  box-sizing:border-box; 
+  width: 50%;
+  float: left;
+}
+.modalDlg .sections .successtxts{
+  font-size:36rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:600;
+  color:rgba(0,0,0,1);
+  line-height:50rpx;
+}

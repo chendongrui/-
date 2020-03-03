@@ -1,0 +1,14 @@
+<view class="code_info rel">
+   <image src="../../assets/bar_code_bg.png"></image>
+   <view class="bar_code_bg abs">
+       <view class="code_user">
+          <image src="{{codeInfo.wxUserIcon != '' || codeInfo.wxUserIcon != null ? codeInfo.wxUserIcon : defaluteHead}}"></image>
+          <text>{{codeInfo.wxUserName}}</text>
+       </view>
+       <view class="code_content">
+          <text>积分条形码</text>
+          <canvas canvas-id="barcode" />
+          <view class="code_num" wx:if="{{memberCard != '' || memberCard != 'nul'}}"><text>我的卡号</text><text>{{memberCard}}</text></view>
+       </view>
+   </view>
+</view>

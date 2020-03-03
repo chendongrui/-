@@ -1,0 +1,115 @@
+@import "../include/include.wxss";
+.records_page{
+  width: 94%;
+  margin: 0 3%;
+}
+.records_list{
+  width: 100%;
+  height: 238rpx;
+  margin-top: 22rpx;
+}
+.records_list image{
+  width: 100%;
+  height: 100%;
+}
+.record_info{
+    left: 0;
+    top: 0;
+    width: 90%;
+    margin:0 5%;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    z-index: 10;
+}
+.record_bar{
+  z-index: 99;
+  top: 0;
+  left: 1%;
+  width:108rpx;
+  height:40rpx;
+  background:rgba(255,194,32,1);
+  border-radius:6px 0px 6px 0px;
+}
+.record_bar image{
+  z-index:100;
+  width:80rpx;
+  height:18rpx;
+  text-align: center;
+  margin-left: 14rpx;
+  margin-top: 13rpx;
+}
+.record_info .lefts, .record_info .rights{
+  margin: 50rpx 0;
+  display: flex;
+  align-items: center;
+}
+.record_info .lefts{
+  width: 75%;
+  justify-content: flex-start;
+}
+.record_info .rights{
+  flex: 1;
+  flex-direction: column;
+}
+.record_info .lefts .list_img{
+  width: 130rpx;
+  height: 130rpx;
+  margin-right: 4%;
+}
+.record_info .lefts .list_img image{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.record_info .lefts .list_info .list_time{
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(154,154,154,1);
+  line-height:34rpx;
+  margin: 14rpx 0 10rpx;
+}
+.record_info .lefts .list_info .list_name{
+  font-size:28rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(40,40,40,1);
+  line-height:40rpx;
+}
+.record_info .lefts .list_info .list_namecc{
+  font-size:28rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(154,154,154,1);
+  line-height:40rpx;
+}
+.record_info .rights .btn{
+  padding: 12rpx 20rpx;
+  margin-bottom: 18rpx;
+  background:rgba(236,129,49,1);
+  border-radius:30rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+.record_info .rights .btncc{
+  padding: 12rpx 20rpx;
+  margin-bottom: 18rpx;
+  background:rgba(182,182,182,1);
+  border-radius:30rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+.record_info .rights text{
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(154,154,154,1);
+  line-height:34rpx;
+}

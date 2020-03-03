@@ -1,0 +1,20 @@
+@import "../include/include.wxss";
+.availableStores_page{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  background:rgba(255,255,255,1);
+}
+.availableStores_page .store_list view{
+  font-size:30rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  padding: 20rpx 5%;
+  color:rgba(40,40,40,1);
+  line-height:42rpx;
+  border-bottom: 1px solid #ECECEC;
+}
+.availableStores_page .store_list view:last-child{
+  border-bottom: none;
+}

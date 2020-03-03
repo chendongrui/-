@@ -1,0 +1,270 @@
+.commodDetail_page,.commodDetail_page .commond{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.commond{
+  border-bottom: 2rpx solid #E0E0E0;
+}
+.commond image{
+  width: 100%;
+  height: 750rpx;
+}
+.shops_mess{
+  width: 92%;
+  padding: 20rpx 8%;
+  display: flex;
+  flex-direction: column;
+  background:rgba(255,255,255,1);
+}
+.shops_mess .intros{
+  font-size:36rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(40,40,40,1);
+  line-height:50rpx;
+  margin-bottom: 16rpx;
+}
+.shops_mess .intros:nth-child(1){
+  font-size:40rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(222,28,36,1);
+  line-height:56rpx;
+}
+.address{
+  margin: 20rpx 0;
+  width: 90%;
+  padding: 24rpx 5%;
+  display: flex;
+  justify-content: space-between;
+  background:rgba(255,255,255,1);
+  align-items: center;
+}
+.address view{
+  display: flex;
+  align-items: center;
+}
+.address view:nth-child(1) image{
+  width: 28rpx;
+  height: 36rpx;
+  display: inline-block;
+  margin-right: 12rpx;
+}
+.address view:nth-child(1) text{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(40,40,40,1);
+  line-height:40rpx;
+}
+.address image{
+  width: 18rpx;
+  height: 28rpx;
+}
+.content_txt{
+  width: 90%;
+  padding: 0 5% 0;
+  background:rgba(255,255,255,1);
+}
+.content_txt .h5{
+  font-size:34rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:600;
+  color:rgba(40,40,40,1);
+  line-height:48rpx;
+  margin:30rpx 0 20rpx 0;
+}
+.content_txt .h6{
+  font-size:30rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(40,40,40,1);
+  line-height:42rpx;
+  margin-bottom: 20rpx;
+}
+.content_txt .h6:last-child{
+  margin-bottom:30rpx;
+}
+.redeem_now_btn{
+  font-size:32rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:44rpx;
+  width: 100%;
+  margin-top: 56rpx;
+  background:rgba(236,129,49,1);
+  padding: 28rpx 0;
+}
+.fixeds{
+  font-size:32rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:44rpx;
+  width: 100%;
+  margin-top: 56rpx;
+  background:rgba(236,129,49,1);
+  padding: 28rpx 0;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  z-index:10000;
+}
+.redeem_now_btn_cc{
+  font-size:32rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height:44rpx;
+  width: 100%;
+  background:#9A9A9A;
+  padding: 28rpx 0;
+  margin-top: 56rpx;
+}
+/* 弹框 */
+.modalDlg{
+  width: 560rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  background:rgba(255,255,255,1);
+  border-radius:4px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28rpx;
+  transform: translate(-50%,-50%);
+ }
+ .modalDlg .section{
+  font-size:36rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  line-height:50rpx;
+  padding: 80rpx 72rpx 64rpx;
+ }
+ .modalDlg .section text{
+  color: #DE1C24;
+}
+.modalDlg .btn{
+   height: 100rpx;
+   border-top:1rpx solid rgba(229,229,229,1);
+  }
+.modalDlg .btn .button{
+  border:none;
+  position: static;
+  background: none; 
+  width:280rpx;
+  padding:0;
+  text-align: center;
+  border-radius:0;
+  font-size:36rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height: 100rpx
+}
+.modalDlg .btn .sureChange{
+  color:rgba(0,113,206,1);
+}
+.modalDlg .btn .button.btnPerson {
+  border-right:1rpx solid rgba(229,229,229,1);
+}
+.modalDlg .btn .a{ 
+  box-sizing:border-box; 
+  width: 50%;
+  float: left;
+}
+.modalDlg .fail_btn{ 
+  box-sizing:border-box; 
+  width: 100%;
+  border-top:1rpx solid rgba(229,229,229,1);
+  float: left;
+}
+.modalDlg .fail_btn .fails{ 
+  box-sizing:border-box; 
+  width: 100%;
+  float: left;
+  line-height: 100rpx;
+  font-size:36rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(0,113,206,1);
+  line-height:100rpx;
+}
+.modalDlg .sections image{
+  width: 88rpx;
+  height: 88rpx;
+  margin: 50rpx 0 0;
+  display: inline-block;
+}
+.modalDlg .sections .successtxt{
+  font-size:32rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(40,40,40,1);
+  line-height:44px;
+  margin-bottom: 30rpx;
+}
+.modalDlg .sections .successtxts:nth-child(1){
+  margin-top: 28rpx;
+}
+.modalDlg .sections .noenght{
+  margin-bottom:15rpx;
+}
+.modalDlg .sections .successtxts:last-child{
+  font-size:32rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(40,40,40,1);
+  line-height:44px;
+  margin: -8rpx 0 18rpx;
+}
+
+/* 弹出框 */
+.modalDlg{
+  background: none;
+}
+.modalDlg image{
+  width: 562rpx;
+  height: 692rpx;
+}
+.tip_info{
+  left: 0;
+  bottom: 60rpx;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.tip_info .tips text{
+  color:#0071CE;
+}
+.tip_info .registerBtn{
+    width: 158rpx;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    padding: 16rpx 120rpx;
+    background:rgba(0,113,206,1);
+    box-shadow:0px 2px 8px 0px rgba(0,113,206,0.5);
+    border-radius:42rpx;
+    font-size:34rpx;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(255,255,255,1);
+    line-height:48rpx;
+}
+.modalDlg .closeBtn{
+  left: 42%;
+  bottom: -130rpx;
+  width:80rpx;
+  height: 80rpx;
+  cursor: pointer;
+}
+.modalDlg .closeBtn image{
+  width: 100%;
+  height: 100%;
+}

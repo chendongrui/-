@@ -1,0 +1,55 @@
+@import "../include/include.wxss";
+page{  box-sizing: border-box;background:rgba(255,255,255,1);font-size:24rpx;}
+.searchCity_page{
+  height:100%;
+  width: 100%;
+  background:rgba(255,255,255,1);
+}
+.search_btn{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background:rgba(255,255,255,1);
+  box-shadow:0px -2rpx 0px 0px rgba(229,229,229,1);
+}
+.search_btn .inputs{
+  width: 94%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 18rpx 3%;
+  border:2rpx solid rgba(204,204,204,1);
+  border-radius:32rpx;
+}
+.search_btn .inputs .weui-input{
+  width: 88%;
+}
+.search_btn .inputs image{
+  width: 34rpx;
+  height: 34rpx;
+  display: inline-block;
+  padding: 0 3%;
+}
+.city_list{
+  width:90%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+}
+.city_list .lists{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background:rgba(248,248,248,1);
+  border-radius:4px;
+  margin:10rpx 0;
+}
+.city_list .lists text{
+  font-size:32rpx;
+  width:90%;
+  padding: 46rpx 5%;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+}
